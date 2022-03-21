@@ -8,7 +8,6 @@ export async function validTicket(req, res){
         let response = validDigitableLine.length === 47 ? await treatmentToOrdinaryBarCode(validDigitableLine) : await treatmentToConvenantBarCode(validDigitableLine)
         res.send(response)
     } catch (error) {
-        console.error(error.message)
         res.status(400).send(error.message)
     }
 }
