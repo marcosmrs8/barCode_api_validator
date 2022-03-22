@@ -4,9 +4,8 @@ export async function expiresDate(digitableLine){
     if(digitableLine){
         if(digitableLine.length === 48){
             let expireDate = ''
-            expireDate = expireDate.concat(digitableLine.slice(20, 23), digitableLine.slice(24, 29))
-            // `${expireDate.substring(0, 4)}-${expireDate.substring(4, 6)}-${expireDate.substring(6, 8)}`
-            return ''
+            expireDate = expireDate.concat(digitableLine.slice(20, 23), digitableLine.slice(24, 29))           
+            return `${expireDate.substring(0, 4)}-${expireDate.substring(4, 6)}-${expireDate.substring(6, 8)}`
         }
         let expireDate = digitableLine.slice(33, 37)
         const baseData = new Date("10/07/1997")

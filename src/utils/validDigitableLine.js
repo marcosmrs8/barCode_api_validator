@@ -7,5 +7,8 @@ export async function validateDigitableLine(digitableLine){
     if(validatedDigitableLine.length <= 46 || validatedDigitableLine.length > 48){
         throw new Error('Malformed ticket.')
     }
+    if(digitableLine.length === 48 && !digitableLine.startsWith('8')){
+        throw new Error('Invalid first digit.')
+    }
     return validatedDigitableLine
 }

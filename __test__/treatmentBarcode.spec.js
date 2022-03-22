@@ -30,12 +30,12 @@ test('Should receive a digitable line and return parts of this digitable line', 
 
 describe('treatmentToConvenantBarCode', () => {
     test('Should check if is a valid digitable line and return a barCode amount and expirationDate to convenant type',async ( ) => {
-        const digitableLine = '836400000029451201110009001010202222616303342052'
+        const digitableLine = '846900000015100002962023203209230002002200195267'
         const data = await treatmentToConvenantBarCode(digitableLine)
         expect(data).toEqual({
-            "barCode": "83640000002451201110000010102022261630334205",
-            "amount": "245,12",
-            "expirationDate": ""
+            "barCode": "84690000001100002962022032092300000220019526",
+            "amount": "110,00",
+            "expirationDate": "2022-03-20"
         })
     })
     test('Should receive a invalid digit verificator and return error',async ( ) => {
